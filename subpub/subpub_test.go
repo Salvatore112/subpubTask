@@ -162,9 +162,18 @@ func TestOrderPreservation(t *testing.T) {
 	defer sub.Unsubscribe()
 
 	wg.Add(3)
-	bus.Publish("test", "msg1")
-	bus.Publish("test", "msg2")
-	bus.Publish("test", "msg3")
+	err = bus.Publish("test", "msg1")
+	if err != nil {
+		t.Fatalf("Publish failed: %v", err)
+	}
+	err = bus.Publish("test", "msg2")
+	if err != nil {
+		t.Fatalf("Publish failed: %v", err)
+	}
+	err = bus.Publish("test", "msg3")
+	if err != nil {
+		t.Fatalf("Publish failed: %v", err)
+	}
 
 	wg.Wait()
 
