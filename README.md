@@ -1,4 +1,6 @@
 ## Сервис PubSub
+![Build Status](https://github.com/Salvatore112/subpubTask/actions/workflows/go.yml/badge.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ### Основная функция
 Это gRPC-сервис для обмена сообщениями по принципу **Publisher-Subscriber**.
