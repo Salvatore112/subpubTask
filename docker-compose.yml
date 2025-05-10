@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  pubsub-server:
+    build: .
+    ports:
+      - "50051:50051"
+    environment:
+      - LOG_LEVEL=debug
+    healthcheck:
+      test: [ "CMD", "grpcurl", "-plaintext", "localhost:50051", "list" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
